@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 html {
@@ -171,4 +174,8 @@ body {
 .img1 img{
   height: 280px;
 z-index: -1;
+}
+
+h1{
+  font-family: 'santa_christmasregular','Mountains of Christmas', cursive;
 }
