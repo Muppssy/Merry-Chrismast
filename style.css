@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
 html {
@@ -18,14 +17,15 @@ body {
   min-height: 100vh;
 }
 
-.container_snow{
+/* Section animation pour faire tomber La neige*/
+.container_snow {
   max-width: 1440px;
   height: 100vh;
   width: 100%;
   background-image: url(img/1.png), url(img/2.png), url(img/3.png);
   position: fixed;
   opacity: 0.7;
-  animation: animate 20s linear infinite ;
+  animation: animate 20s linear infinite;
 }
 
 @keyframes animate {
@@ -37,13 +37,16 @@ body {
     background-position: 500px 100px, 400px 400px, 300px 300px;
   }
 }
+/*----------------------*/
+
+/* Section top*/
 
 .container {
   display: flex;
   flex-direction: column;
   position: relative;
   background-color: #193956;
-  height: auto;
+  height: 100vh;
   position: relative;
   z-index: -1000;
 }
@@ -90,37 +93,213 @@ body {
   position: absolute;
   top: 0;
   bottom: 0;
+  overflow: hidden;
+  z-index: 10;
 }
+
+/*--------------------------*/
+
+/* Section Slider*/
 
 .block-animation {
-  width: 100%;
-  height: 40vh;
-  background-color: rgb(255, 0, 255);
+  /* overflow: hidden; */
+  z-index: -10;
+  backdrop-filter: blur(5px);
 }
 
-.block-animation .container_animation {
+.block-animation .slider {
+  position: relative;
+  width: 500%;
+  height: 300px;
+  margin: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100%;
+  text-align: center;
+  flex-direction: row;
+  /* animation: 20s slider both; */
 }
 
-.block-animation .container_animation h1 {
-  font-family: santa_christmasregular;
-  font-size: 5.2em;
+.slide {
+  width: 100%;
+  float: left;
+  margin: 0rem 1rem;
 }
+
+.slide:nth-child(1) {
+  margin: 0 0 0 0;
+  width: 99%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+h1 span {
+  display: inline-block;
+  color: #ff7f50;
+  text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+    #ff7f50 0px 0px 20px, #ff7f50 0px 0px 30px, #ff7f50 0px 0px 40px,
+    #ff7f50 0px 0px 50px, #ff7f50 0px 0px 75px;
+  font-family: "santa_christmasregular", "Mountains of Christmas", cursive;
+  font-size: 5em;
+  transform: rotate(20deg);
+  margin: -3rem 0 0 0;
+  animation-delay: 4s;
+  animation-name: zoomIn;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+h2 span {
+  display: inline-block;
+  color: #509cff;
+  text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+    #509cff 0px 0px 20px, #509cff 0px 0px 30px, #509cff 0px 0px 40px,
+    #509cff 0px 0px 50px, #509cff 0px 0px 75px;
+
+  font-family: "santa_christmasregular", "Mountains of Christmas", cursive;
+  font-size: 5em;
+  margin: 0 0 0 2rem;
+  transform: rotate(-15deg);
+  animation-delay: 4.5s;
+  animation-name: zoomIn;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+h3 span {
+  display: inline-block;
+  color: #ff5076;
+  text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+    #df4357 0px 0px 20px, #df4357 0px 0px 30px, #df4357 0px 0px 40px,
+    #df4357 0px 0px 50px, #df4357 0px 0px 75px;
+
+  font-family: "santa_christmasregular", "Mountains of Christmas", cursive;
+  font-size: 5em;
+  margin: 0 2rem 0 0;
+  transform: rotate(-15deg);
+  animation-delay: 3.5s;
+  animation-name: zoomIn;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+
+  
+}
+× .slide:nth-child(2) {
+  background-color: rgb(0, 238, 255);
+  margin: 0 0 0 0;
+  width: 99%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.slide:nth-child(3) {
+  background-color: rgb(76, 0, 255);
+  margin: 0 0 0 0;
+  width: 99%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.slide:nth-child(3) {
+  background-color: rgb(255, 0, 212);
+  margin: 0 0 0 0;
+  width: 99%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.slide:nth-child(4) {
+  background-color: rgb(255, 102, 0);
+  margin: 0 0 0 0;
+  width: 99%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.slide:nth-child(5) {
+  background-color: rgb(255, 0, 0);
+  margin: 0 0 0 0;
+  width: 99%;
+  padding: 1rem;
+}
+
+@keyframes slider {
+  0% {
+    left: 0;
+  }
+
+  20% {
+    left: 0;
+  }
+
+  25% {
+    left: -100%;
+  }
+
+  45% {
+    left: -100%;
+  }
+
+  50% {
+    left: -200%;
+  }
+
+  70% {
+    left: -200%;
+  }
+
+  75% {
+    left: -300%;
+  }
+
+  95% {
+    left: -300%;
+  }
+
+  100% {
+    left: -400%;
+  }
+}
+
+/*-----------------------------------------*/
+
+/*section Bottom*/
 
 .container .block3 {
-  height: auto;
+  height: 46%;
+  /* vertical-align: bottom; */
 }
 
 .container .block3 .bgm-container {
-  height: auto;
+  height: 100%;
   width: auto;
 }
 
 .bgm-container .bgm_down {
-  height: auto;
+  /* height: auto; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -132,7 +311,7 @@ body {
   animation-name: slideInRight;
   animation-duration: 3s;
   animation-fill-mode: both;
-  
+
   opacity: 0;
 }
 
@@ -157,7 +336,6 @@ body {
   0% {
     transform: translateX(-220%);
     opacity: 0;
-   
   }
   100% {
     transform: translateX(0);
@@ -165,17 +343,14 @@ body {
   }
 }
 
-× .bgm-container .bgm_down  img {
+× .bgm-container .bgm_down img {
   width: 100%;
   object-fit: cover;
   height: 281px;
 }
 
-.img1 img{
-  height: 280px;
-z-index: -1;
+.img1 img {
+  height: 352px;
+  z-index: -1;
 }
-
-h1{
-  font-family: 'santa_christmasregular','Mountains of Christmas', cursive;
-}
+/*------------------------------------*/
